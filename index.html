@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spin Picker</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="wheel-section" aria-labelledby="app-title">
+        <header class="top-bar">
+          <div>
+            <p class="eyebrow">Random name picker</p>
+            <h1 id="app-title">Spin Picker</h1>
+          </div>
+        </header>
+
+        <div class="wheel-wrap">
+          <div class="wheel-stage">
+            <canvas
+              id="wheelCanvas"
+              width="680"
+              height="680"
+              aria-label="Wheel of names"
+              role="img"
+            ></canvas>
+            <div class="pointer" aria-hidden="true"></div>
+            <button
+              class="spin-button wheel-spin-button"
+              id="spinButton"
+              type="button"
+              disabled
+            >
+              Spin
+            </button>
+            <div class="result" id="result" aria-live="polite">Add names</div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel" aria-labelledby="names-title">
+        <h2 id="names-title">Names</h2>
+        <form class="name-form" id="nameForm">
+          <label class="sr-only" for="nameInput">Name</label>
+          <input
+            id="nameInput"
+            type="text"
+            autocomplete="off"
+            maxlength="40"
+            placeholder="Name"
+          />
+          <button class="add-button" type="submit">Add</button>
+        </form>
+
+        <ul class="name-list" id="nameList"></ul>
+        <p class="empty-state" id="emptyState">No names yet.</p>
+      </aside>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
